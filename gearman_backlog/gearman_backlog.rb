@@ -1,5 +1,5 @@
 class GearmanBacklog < Scout::Plugin
-  require 'net/telnet'
+  needs 'net/telnet'
   OPTIONS=<<-EOS
     host:
       name: Host
