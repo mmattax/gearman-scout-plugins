@@ -9,7 +9,7 @@ class GearmanTask < Scout::Plugin
       default: localhost
       notes: Hostname or IP address of the Gearman job server
     port:
-      name Port
+      name: Port
       default: 4730
   EOS
   def build_report
