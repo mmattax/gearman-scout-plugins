@@ -13,8 +13,8 @@ class GearmanBacklog < Scout::Plugin
     telnet = Net::Telnet::new("Host" => option(:host), "Port" => option(:port))
     status = telnet.cmd("String" => "status", "Match" => /\n./)
     status.split("\n")[0...-1].map do |job|
-      name, total, running, workers = job.split("\t")
-      report(name => total)
+      task, total, running, workers = job.split("\t")
+      report(task => total)
     end
   end
 end
