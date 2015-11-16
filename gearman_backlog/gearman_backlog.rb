@@ -6,8 +6,11 @@ class GearmanBacklog < Scout::Plugin
       default: localhost
       notes: Hostname or IP address of the Gearman job server
     port:
-      name Port
+      name: Port
       default: 4730
+    task:
+      name: Task
+      default: task_name
   EOS
   def build_report
     telnet = Net::Telnet::new("Host" => option(:host), "Port" => option(:port))
